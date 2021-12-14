@@ -3,6 +3,8 @@ WORKDIR /app
 COPY package*.json /app/
 RUN npm install
 COPY . /app/
+ARG REACT_APP_SERVER_ADDRESS;
+ENV REACT_APP_SERVER_ADDRESS=
 RUN npm run build
 
 FROM nginx:alpine
